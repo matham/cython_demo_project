@@ -2,6 +2,7 @@ name: Python application
 
 on: [push, pull_request]
 
+
 jobs:
   windows_tests:
     runs-on: windows-latest
@@ -12,14 +13,11 @@ jobs:
       with:
         python-version: 3.x
     - name: Install pip deps
-      run: |
-        python -m pip install --upgrade pip wheel setuptools
+      run: python -m pip install --upgrade pip wheel setuptools
     - name: Install
-      run: |
-        python -m pip install .[dev]
+      run: python -m pip install -e .[dev]
     - name: Test
-      run: |
-        pytest
+      run: pytest
 
   linux_test:
     runs-on: ubuntu-18.04
@@ -30,11 +28,8 @@ jobs:
       with:
         python-version: 3.x
     - name: Install pip deps
-      run: |
-        python -m pip install --upgrade pip wheel setuptools
+      run: python -m pip install --upgrade pip wheel setuptools
     - name: Install
-      run: |
-        python -m pip install .[dev]
+      run: python -m pip install -e .[dev]
     - name: Test
-      run: |
-        pytest
+      run: pytest
