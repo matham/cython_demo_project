@@ -1,0 +1,40 @@
+name: Python application
+
+on: [push, pull_request]
+
+jobs:
+  windows_tests:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+    - name: Install pip deps
+      run: |
+        python -m pip install --upgrade pip wheel setuptools
+    - name: Install
+      run: |
+        python -m pip install .[dev]
+    - name: Test
+      run: |
+        pytest
+
+  linux_test:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+    - name: Install pip deps
+      run: |
+        python -m pip install --upgrade pip wheel setuptools
+    - name: Install
+      run: |
+        python -m pip install .[dev]
+    - name: Test
+      run: |
+        pytest
