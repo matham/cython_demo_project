@@ -2,6 +2,9 @@ name: Python application
 
 on: [push, pull_request]
 
+env:
+  SETUPTOOLS_USE_DISTUTILS: local
+
 jobs:
   windows_tests:
     runs-on: windows-latest
