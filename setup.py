@@ -42,7 +42,7 @@ setup(
     setup_requires=['cython'],
     install_requires=[],
     extras_require={
-        'dev': ['pytest>=3.6', 'wheel'],
+        'dev': ['pytest>=3.6', 'wheel', 'sphinx-rtd-theme', 'sphinx'],
     },
     package_data={'cython_demo_project': ['*.pxd']},
     data_files=[],
