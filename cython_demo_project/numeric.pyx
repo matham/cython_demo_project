@@ -2,7 +2,7 @@
 ==========
 
 """
-__all__ = ('NumericComputation', )
+__all__ = ('NumericComputation', 'Numbers')
 
 
 cdef class NumericComputation:
@@ -16,3 +16,9 @@ cdef class NumericComputation:
         """Returns the sum of the input.
         """
         return self.a + self.b
+
+
+cpdef enum Numbers:
+    one = 1
+    two = 2
+"""Number list."""
