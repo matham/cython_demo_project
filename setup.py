@@ -1,8 +1,8 @@
-from setuptools import setup, Extension, find_packages
+from setuptools import setup, find_packages
 from io import open
 from os.path import dirname, join
 from os import path
-from Cython.Distutils import build_ext
+from Cython.Distutils import build_ext, Extension
 from cython_demo_project import __version__
 
 URL = 'https://github.com/matham/cython_demo_project'

@@ -6,8 +6,7 @@ __all__ = ('NumericComputation', )
 
 
 cdef class NumericComputation:
-    """Computes something numerically
-    """
+    """Computes something numerically."""
 
     def __cinit__(self, int a, int b):
         self.a = a
